@@ -1,0 +1,1 @@
+This is the repository for the latest SC OSR Template. Clone to your desktop to use the latest version.
