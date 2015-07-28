@@ -1,0 +1,17 @@
+
+//Font Base - example, @include font-base(12px, 15px);
+@mixin font-base($fontsize, $line-height){
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:$fontsize;
+	line-height:$line-height;
+}
+
+
+//Media queries - example usage in base html
+@mixin mobile-view() {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}

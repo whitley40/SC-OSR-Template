@@ -1,0 +1,17 @@
+/*This stops the initial white background issue and set the padding above the OSR*/
+.osr-content {
+	background-color: transparent !important;
+	top: 15% !important;
+	width:500px; /* this needs to match the wrapper-sc width */
+	@include mobile-view {
+		width: 100%!important;
+	}
+}
+/*This lets you control the colour of the translucent overlay*/
+.osr-overlay {
+	background-color: rgba(0,0,0,0.7) !important;
+}
+/* Fix to make sure the div doesn't appear at the bottom of the page (it shouldn't anyway, but there's a bug that causes it to). The 1px by 1px lets it pre-load assets.  */
+div.hidden {
+	height: 1px; width: 1px; display: none;
+}

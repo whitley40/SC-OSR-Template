@@ -6,7 +6,7 @@ module.exports = function(grunt){
 		uglify: {
 			build: {
 				src: 'src/js/*.js',
-				dest: 'js/script.min.js'
+				dest: 'script.min.js'
 			},
 			dev: {
 				options : {
@@ -16,7 +16,7 @@ module.exports = function(grunt){
 					preserveComments: 'all'
 				},
 				src: 'src/js/*.js',
-				dest: 'js/script.min.js'
+				dest: 'script.min.js'
 			}
 		},
 		sass: {
@@ -25,7 +25,7 @@ module.exports = function(grunt){
 					outputStyle: 'expanded'
 				},
 				files: {
-					'css/styles.css' : 'src/sass/styles.scss'
+					'styles.css' : 'src/sass/styles.scss'
 				}
 			},
 			build: {
@@ -33,10 +33,22 @@ module.exports = function(grunt){
 					outputStyle: 'compressed'
 				},
 				files: {
-					'css/styles.css' : 'src/sass/styles.scss'
+					'styles.css' : 'src/sass/styles.scss'
 				}
 			}
 		},
+		autoprefixer: {
+            dev: {
+                files: {
+                    'styles.css': 'styles.css'
+                }
+            },
+            build: {
+                files: {
+                    'styles.css': 'styles.css'
+                }
+            }
+        },
 		watch: {
 			js: {
 				files: ['src/js/*.js'],
@@ -45,6 +57,10 @@ module.exports = function(grunt){
 			css: {
 				files: ['src/sass/*.scss'],
 				tasks: ['sass:dev']
+			},
+			autoprefixer: {
+				files: ['styles.css'],
+				tasks: ['autoprefixer:dev']
 			}
 		}
 	});
@@ -53,9 +69,10 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
 	//Register tasks
-	grunt.registerTask('default',['uglify:dev','sass:dev']);
-	grunt.registerTask('build',['uglify:build', 'sass:build']);
+	grunt.registerTask('default',['uglify:dev','sass:dev','autoprefixer:dev']);
+	grunt.registerTask('build',['uglify:build', 'sass:build','autoprefixer:build']);
 
 };
