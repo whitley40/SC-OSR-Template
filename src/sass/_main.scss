@@ -25,7 +25,7 @@
 #wrapper-sc {
 	font-family: sans-serif;
 	display: block;
-	width: 500px;
+	width: $osr-width; //width is set in _vars.scss
 	background: #FFFFFF;
 	padding: 20px;
 	box-sizing: border-box;

@@ -79,7 +79,6 @@ body {
   background-color: transparent !important;
   top: 15% !important;
   width: 500px;
-  /* this needs to match the wrapper-sc width */
 }
 
 @media screen and (max-width: 480px) {

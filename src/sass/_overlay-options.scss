@@ -2,7 +2,7 @@
 .osr-content {
 	background-color: transparent !important;
 	top: 15% !important;
-	width:500px; /* this needs to match the wrapper-sc width */
+	width:$osr-width; //width is set in _vars.scss
 	@include mobile-view {
 		width: 100%!important;
 	}
